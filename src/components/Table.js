@@ -21,7 +21,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-
   fontWeight: "bold",
 }));
 
@@ -54,7 +53,17 @@ export default function CustomizedTables() {
     <TableContainer
       component={Paper}
       className='table'
-      sx={{ maxHeight: 800, width: "90%", margin: "auto" }}
+      sx={{
+        maxHeight: 800,
+        width: {
+          xs: "100%",
+          sm: "calc(100% - 60px)",
+          md: "calc(100% - 80px)",
+        },
+        maxWidth: "100%", // prevents content overflow
+
+        margin: "auto",
+      }}
     >
       <Table sx={{ minWidth: 600 }} aria-label='customized table' size='medium'>
         <TableHead sx={{ backgroundColor: "white" }}>

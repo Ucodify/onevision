@@ -3,16 +3,28 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, Grid, ThemeProvider } from "@mui/material";
 import Theme from "./components/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <Grid item xs={12} sm={6} md={4}>
+      <Box
+        sx={{
+          width: {
+            xs: "100%",
+            sm: "50%",
+            md: "30%",
+          },
+        }}
+      >
+        <ThemeProvider theme={Theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+      </Box>
+    </Grid>
   </React.StrictMode>
 );
 

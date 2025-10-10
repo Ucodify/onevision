@@ -1,4 +1,3 @@
-// Drawer.js
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -14,6 +13,7 @@ import menu from "../images/menu.png";
 import knowledgebase from "../images/knowledgebase.png";
 import pc from "../images/pc.png";
 import books from "../images/books.png";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 220;
 
@@ -52,35 +52,46 @@ const StyledDrawer = styled(Drawer, {
 }));
 
 export default function MiniDrawer({ onDrawerToggle }) {
+  const [selected, setSelected] = React.useState(null);
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
+  const handleMenuClick = (index, path) => {
+    setSelected(index);
+    if (path) navigate(path); // 👈 Navigate if path is defined
+  };
   const toggleDrawer = () => {
     const newState = !open;
     setOpen(newState);
-    if (onDrawerToggle) onDrawerToggle(newState); // inform parent
+    if (onDrawerToggle) onDrawerToggle(newState);
   };
 
   const menuItems = [
-    { text: "ELearning", label: "ELearning" },
-    { text: "Dashboard", icon: <GridViewIcon /> },
+    { text: "ELearning" },
+    { text: "Dashboard", icon: <GridViewIcon />, path: "/" },
     {
       text: "Knowledgebase",
       icon: <img src={knowledgebase} alt='pc' height={20} />,
     },
-    { text: "My Courses", icon: <img src={pc} alt='pc' height={20} /> },
+    {
+      text: "My Courses",
+      icon: <img src={pc} alt='pc' height={20} />,
+      path: "/my-courses",
+    },
     { text: "Courses Feedback", icon: <img src={pc} alt='pc' height={20} /> },
     { text: "Library", icon: <img src={books} alt='books' height={20} /> },
   ];
 
   return (
     <Box sx={{ display: "flex" }}>
+      {/* Toggle Button */}
       <IconButton
         onClick={toggleDrawer}
         sx={{
           color: "gray",
           position: "fixed",
           top: 25,
-          left: open ? 10 : 10,
+          left: 10,
           zIndex: 2000,
           transition: "left 0.3s ease",
         }}
@@ -88,23 +99,35 @@ export default function MiniDrawer({ onDrawerToggle }) {
         <img src={menu} alt='menu' height={20} />
       </IconButton>
 
+      {/* Drawer */}
       <StyledDrawer variant='permanent' open={open}>
         <Box sx={{ bgcolor: "#f8f9ff", height: "100%", pt: 1.5 }}>
           <List>
-       
-            {menuItems.map((item) => (
+            {menuItems.map((item, index) => (
               <ListItem
                 key={item.text}
                 disablePadding
-                sx={{ display: "block", ml: "10px", mb: "2px" 
-               }}
+                sx={{ display: "block", ml: "10px", mb: "2px" }}
               >
                 <ListItemButton
+                  onClick={() => handleMenuClick(index, item.path)}
                   sx={{
                     minHeight: 48,
                     justifyContent: open ? "initial" : "center",
                     px: 2.5,
-                    
+                    borderRadius: "8px",
+                    background:
+                      selected === index
+                        ? "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))"
+                        : "transparent",
+                    color: selected === index ? "white" : "#7C7C7C",
+                    "&:hover": {
+                      background:
+                        selected === index
+                          ? "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))"
+                          : "rgba(99, 91, 255, 0.15)",
+                      color: "white",
+                    },
                   }}
                 >
                   <ListItemIcon
@@ -112,11 +135,12 @@ export default function MiniDrawer({ onDrawerToggle }) {
                       minWidth: 0,
                       mr: open ? 2 : "auto",
                       justifyContent: "center",
-                      color: "#7C7C7C"
+                      color: selected === index ? "white" : "#7C7C7C",
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
+
                   <ListItemText
                     primary={item.text}
                     sx={{
@@ -124,7 +148,7 @@ export default function MiniDrawer({ onDrawerToggle }) {
                       "& .MuiTypography-root": {
                         fontSize: "14px",
                         fontWeight: "bold",
-                        color: "#7C7C7C"
+                        color: selected === index ? "white" : "#7C7C7C",
                       },
                     }}
                   />
