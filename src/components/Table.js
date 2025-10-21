@@ -48,7 +48,19 @@ const rows = [
   createData("Testing Location Lahore v3", 1, 70, 0, 0, 26.67),
 ];
 
-export default function CustomizedTables() {
+// Default columns for backward compatibility
+const defaultColumns = [
+  { field: "locationname", headerName: "Location Name", align: "left" },
+  { field: "users", headerName: "Users", align: "right" },
+  { field: "inlessonquiz", headerName: "In Lesson Quiz", align: "right" },
+  { field: "managerquiz", headerName: "Manager Quiz", align: "right" },
+  { field: "videoquiz", headerName: "Video Quiz", align: "right" },
+  { field: "lessons", headerName: "Lessons", align: "right" },
+];
+
+export default function CustomizedTables({ columns, data }) {
+  const tableColumns = columns || defaultColumns;
+  const tableData = data || rows;
   return (
     <TableContainer
       component={Paper}
@@ -60,35 +72,48 @@ export default function CustomizedTables() {
           sm: "calc(100% - 60px)",
           md: "calc(100% - 80px)",
         },
-        maxWidth: "100%", // prevents content overflow
-
+        maxWidth: "100%",
+        overflowX: "auto",
         margin: "auto",
       }}
     >
       <Table sx={{ minWidth: 600 }} aria-label='customized table' size='medium'>
         <TableHead sx={{ backgroundColor: "white" }}>
-          <TableRow>
-            <StyledTableCell>Location Name</StyledTableCell>
-            <StyledTableCell align='right'>Users</StyledTableCell>
-            <StyledTableCell align='right'>In Lesson Quiz</StyledTableCell>
-            <StyledTableCell align='right'>Manager Quiz</StyledTableCell>
-            <StyledTableCell align='right'>Video Quiz</StyledTableCell>
-            <StyledTableCell align='right'>Lessons</StyledTableCell>
+          <TableRow sx={{height: 10}}>
+            {tableColumns.map((column) => (
+              <StyledTableCell
+                key={column.field}
+                align={column.align || "center"}
+                fontSize={13}
+                fontWeight={"bold"}
+                sx={{
+                  fontSize: "13px !important",
+                  fontWeight: "600 !important",
+                 
+                }}
+              >
+                {column.headerName}
+              </StyledTableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component='th' scope='row'>
-                {row.locationname}
-              </StyledTableCell>
-              <StyledTableCell align='right'>{row.users}</StyledTableCell>
-              <StyledTableCell align='right'>
-                {row.inlessonquiz}
-              </StyledTableCell>
-              <StyledTableCell align='right'>{row.managerquiz}</StyledTableCell>
-              <StyledTableCell align='right'>{row.videoquiz}</StyledTableCell>
-              <StyledTableCell align='right'>{row.lessons}</StyledTableCell>
+          {tableData.map((row, index) => (
+            <StyledTableRow key={index}>
+              {tableColumns.map((column) => (
+                <StyledTableCell
+                  key={column.field}
+                  align={column.align || "center"}
+                  component={column.align === "left" ? "th" : "td"}
+                  scope={column.align === "left" ? "row" : undefined}
+                  sx={{
+                    fontSize: "14px !important",
+                    fontWeight: "500 !important",
+                  }}
+                >
+                  {row[column.field]}
+                </StyledTableCell>
+              ))}
             </StyledTableRow>
           ))}
         </TableBody>

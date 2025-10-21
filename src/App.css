@@ -1,10 +1,4 @@
-.App {
-  text-align: start;
-  background-color: whitesmoke !important;
-}
-. {
-  background-color: #f6f6f6;
-}
+
 .appbar {
   background-color: whitesmoke !important;
 }
@@ -22,7 +16,7 @@
 .hi {
   color: black;
   position: relative;
-  right: 10px;
+  right: 20px;
 }
 .customer {
   display: flex;

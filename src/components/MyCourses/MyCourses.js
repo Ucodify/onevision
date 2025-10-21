@@ -20,10 +20,12 @@ import {
 import courseImg from "../../images/c1.jpeg";
 import qa from "../../images/c2.jpeg";
 import analytics from "../../images/analytics.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const MyCourses = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [tab, setTab] = useState("pending");
+  const navigate = useNavigate();
   const tasks = [
     {
       id: 1,
@@ -307,7 +309,7 @@ const MyCourses = () => {
                     borderRadius: "30px",
                   },
                   "& .Mui-selected": {
-                    color: "white",
+                    color: "white !important",
                     background: "#135098",
                     textDecoration: "none",
                     textUnderline: "none",
@@ -327,7 +329,7 @@ const MyCourses = () => {
               ml: { md: "200px" },
               bgcolor: "white",
               borderRadius: "16px",
-
+              cursor: 'pointer',
               p: isSmall ? 2 : 2,
               mt: 6,
             }}
@@ -362,6 +364,7 @@ const MyCourses = () => {
                   {filteredTasks.map((task) => (
                     <TableRow
                       key={task.id}
+                      onClick={() => navigate("/quizes", { state: { task } })}
                       sx={{
                         "&:not(:last-child)": {
                           borderBottom: "16px solid #F6F6F6",

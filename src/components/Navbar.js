@@ -12,6 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import wave from "../wave.png";
 import logo from "../images/logo.png";
+import MiniDrawer from "./Drawer";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -82,7 +83,7 @@ export default function SearchAppBar({ drawerOpen }) {
             aria-label='open drawer'
             sx={{ mr: 2 }}
           >
-            <TemporaryDrawer />
+            <MiniDrawer />
           </IconButton>
           <a href='/' className='underline-elearning'>
             {" "}
@@ -137,7 +138,7 @@ export default function SearchAppBar({ drawerOpen }) {
                 color: "brown",
                 position: "absolute",
                 bottom: "40px",
-                left: "230px",
+                left: "220px",
               }}
             />
           </div>

@@ -78,8 +78,21 @@ export default function MiniDrawer({ onDrawerToggle }) {
       icon: <img src={pc} alt='pc' height={20} />,
       path: "/my-courses",
     },
-    { text: "Courses Feedback", icon: <img src={pc} alt='pc' height={20} /> },
-    { text: "Library", icon: <img src={books} alt='books' height={20} /> },
+    {
+      text: "Courses Feedback",
+      icon: <img src={pc} alt='pc' height={20} />,
+      path: "/feedback",
+    },
+    {
+      text: "Library",
+      icon: <img src={books} alt='books' height={20} />,
+      path: "/library",
+    },
+    {
+      text: "Grading",
+      icon: <img src={pc} alt='pc' height={20} />,
+      path: "/grading",
+    },
   ];
 
   return (
