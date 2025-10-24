@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: alpha("#1b3f8f", 0.18),
     color: "#275095",
@@ -20,7 +20,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
+export const StyledTableRow = styled(TableRow)(({ theme }) => ({
   fontWeight: "bold",
 }));
 
@@ -79,7 +79,7 @@ export default function CustomizedTables({ columns, data }) {
     >
       <Table sx={{ minWidth: 600 }} aria-label='customized table' size='medium'>
         <TableHead sx={{ backgroundColor: "white" }}>
-          <TableRow sx={{height: 10}}>
+          <TableRow sx={{ height: 10 }}>
             {tableColumns.map((column) => (
               <StyledTableCell
                 key={column.field}
@@ -89,7 +89,6 @@ export default function CustomizedTables({ columns, data }) {
                 sx={{
                   fontSize: "13px !important",
                   fontWeight: "600 !important",
-                 
                 }}
               >
                 {column.headerName}

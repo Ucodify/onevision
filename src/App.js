@@ -12,6 +12,9 @@ import ViewDetails from "./components/CoursesFeedback/ViewDetails";
 import Grading from "./components/Grading/Grading";
 import ViewGradingDetails from "./components/Grading/ViewGradingDetails";
 import Library from "./components/Library/library";
+import AddLesson from "./components/Library/AddLesson";
+import Settings from "./components/Settings/Settings";
+import Earning from "./components/Earning/Earning";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         <Route path='/grading' element={<Grading />} />
         <Route path='/gradingdetails' element={<ViewGradingDetails />} />
         <Route path='/library' element={<Library />} />
+        <Route path='/addLesson' element={<AddLesson />} />
+        <Route path='/settings' element={<Settings />} />
+        <Route path='/earning' element={<Earning />} />
       </Routes>
     </Router>
   );

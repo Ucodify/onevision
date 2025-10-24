@@ -55,7 +55,7 @@ export default function MiniDrawer({ onDrawerToggle }) {
   const [selected, setSelected] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
   const handleMenuClick = (index, path) => {
     setSelected(index);
     if (path) navigate(path); // 👈 Navigate if path is defined
@@ -93,6 +93,16 @@ export default function MiniDrawer({ onDrawerToggle }) {
       icon: <img src={pc} alt='pc' height={20} />,
       path: "/grading",
     },
+    {
+      text: "Earning",
+      icon: <img src={pc} alt='pc' height={20} />,
+      path: "/earning",
+    },
+    {
+      text: "Settings",
+      icon: <img src={pc} alt='pc' height={20} />,
+      path: "/settings",
+    },
   ];
 
   return (
@@ -104,7 +114,7 @@ export default function MiniDrawer({ onDrawerToggle }) {
           color: "gray",
           position: "fixed",
           top: 25,
-          left: 10,
+          left: drawerOpen ? -10 : 20,
           zIndex: 2000,
           transition: "left 0.3s ease",
         }}
@@ -120,7 +130,7 @@ export default function MiniDrawer({ onDrawerToggle }) {
               <ListItem
                 key={item.text}
                 disablePadding
-                sx={{ display: "block", ml: "10px", mb: "2px" }}
+                sx={{ display: "block", ml: "13px", mb: "2px" }}
               >
                 <ListItemButton
                   onClick={() => handleMenuClick(index, item.path)}

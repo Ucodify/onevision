@@ -47,6 +47,150 @@ export default function ELearningDashboard() {
       managerQuiz: "Disabled",
       status: "Pass",
     },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "Maham",
+      category: '"Maham category"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
+    {
+      name: "hyyyy",
+      category: '"Food"',
+      lessonQuiz: "Pending",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pending",
+    },
+    {
+      name: "Dal Dhokli",
+      category: '"Food Lover"',
+      lessonQuiz: "Passed",
+      videoQuiz: "Disabled",
+      managerQuiz: "Disabled",
+      status: "Pass",
+    },
   ];
 
   return (
@@ -56,11 +200,10 @@ export default function ELearningDashboard() {
           minHeight: "1000vh",
           bgcolor: "#f9fafb",
           p: 3,
-          width: { md: drawerOpen ? "1680px" : "1845px" },
+          width: { md: drawerOpen ? "1680px" : "1837px" },
           // width: 'fit-content',
           ml: { md: drawerOpen ? "201px" : "60px" },
           position: "relative",
-
           left: { md: drawerOpen ? 20 : 0 },
         }}
       >
@@ -87,6 +230,10 @@ export default function ELearningDashboard() {
               borderRadius: "8px 0 0 8px",
               borderColor: "#d1d5db",
               bgcolor: activeTab === "My" ? "primary.main" : "white",
+              backgroundImage:
+                activeTab === "My"
+                  ? "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))"
+                  : "white",
               color: activeTab === "My" ? "white" : "text.primary",
             }}
           >
@@ -112,11 +259,11 @@ export default function ELearningDashboard() {
         {/* Table Container */}
         <Paper elevation={1} sx={{ borderRadius: 2, overflow: "hidden" }}>
           {/* Header Row */}
-          <Box sx={{ bgcolor: "#dbeafe", borderBottom: "1px solid #bfdbfe" }}>
+          <Box sx={{ bgcolor: "#C6CFE3", borderBottom: "1px solid #bfdbfe" }}>
             <Grid
               container
               spacing={2}
-              sx={{ px: 2, py: 1.5, fontWeight: 600, color: "text.secondary" }}
+              sx={{ px: 2, py: 1.5, fontWeight: 800, color: "#135098" }}
             >
               <Grid item xs={2} sx={{ px: { md: 2 } }}>
                 <Typography variant='body2'>Lesson Name</Typography>
@@ -143,12 +290,24 @@ export default function ELearningDashboard() {
           </Box>
 
           {/* Filter Row */}
-          <Box sx={{ bgcolor: "#eff6ff", borderBottom: "1px solid #bfdbfe" }}>
+          <Box sx={{ bgcolor: "#C6CFE3", borderBottom: "1px solid #bfdbfe" }}>
             <Grid container spacing={2} sx={{ px: 3, py: 1.5 }}>
               <Grid item xs={2}>
-                <FormControl fullWidth size='small'>
-                  <InputLabel>Lesson</InputLabel>
-                  <Select defaultValue='Lesson' label='Lesson'>
+                <FormControl
+                  fullWidth
+                  size='small'
+                  sx={{ border: "1px solid grey.300", borderRadius: "10px" }}
+                >
+                  <Select
+                    defaultValue='Lesson'
+                    label='Lesson'
+                    sx={{
+                      bgcolor: "white",
+                      color: "grey.600",
+                      borderRadius: "10px",
+                      width: "100px",
+                    }}
+                  >
                     <MenuItem value='Lesson'>Lesson</MenuItem>
                   </Select>
                 </FormControl>
@@ -165,8 +324,15 @@ export default function ELearningDashboard() {
                 }}
               >
                 <FormControl fullWidth size='small'>
-                  <InputLabel>Lesson Quiz</InputLabel>
-                  <Select defaultValue='Lesson Quiz' label='Lesson Quiz'>
+                  <Select
+                    defaultValue='Lesson Quiz'
+                    label='Lesson Quiz'
+                    sx={{
+                      bgcolor: "white",
+                      color: "grey.600",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <MenuItem value='Lesson Quiz'>Lesson Quiz</MenuItem>
                   </Select>
                 </FormControl>
@@ -174,8 +340,15 @@ export default function ELearningDashboard() {
 
               <Grid item xs={1.5} sx={{ pl: { md: drawerOpen ? 10 : 15 } }}>
                 <FormControl fullWidth size='small'>
-                  <InputLabel>Video Quiz</InputLabel>
-                  <Select defaultValue='Video Quiz' label='Video Quiz'>
+                  <Select
+                    defaultValue='Video Quiz'
+                    label='Video Quiz'
+                    sx={{
+                      bgcolor: "white",
+                      color: "grey.600",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <MenuItem value='Video Quiz'>Video Quiz</MenuItem>
                   </Select>
                 </FormControl>
@@ -183,8 +356,15 @@ export default function ELearningDashboard() {
 
               <Grid item xs={1.5} sx={{ px: { md: drawerOpen ? 10 : 13 } }}>
                 <FormControl fullWidth size='small'>
-                  <InputLabel>Manager Quiz</InputLabel>
-                  <Select defaultValue='Manager Quiz' label='Manager Quiz'>
+                  <Select
+                    defaultValue='Manager Quiz'
+                    label='Manager Quiz'
+                    sx={{
+                      bgcolor: "white",
+                      color: "grey.600",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <MenuItem value='Manager Quiz'>Manager Quiz</MenuItem>
                   </Select>
                 </FormControl>
@@ -206,9 +386,12 @@ export default function ELearningDashboard() {
                 gap: 2,
                 alignItems: "center",
                 "&:hover": { bgcolor: "#f9fafb" },
+                borderBottom: "1px solid #e5e7eb",
               }}
             >
-              <Typography variant='body2'>{lesson.name}</Typography>
+              <Typography variant='body2' color='text.secondary'>
+                {lesson.name}
+              </Typography>
               <Typography variant='body2' color='text.secondary'>
                 {lesson.category}
               </Typography>
@@ -244,7 +427,7 @@ export default function ELearningDashboard() {
                       display: "inline-block",
                       px: 2,
                       py: 0.5,
-                      bgcolor: "warning.main",
+                      bgcolor: "#F6B000",
                       color: "white",
                       fontWeight: 500,
                       borderRadius: 9999,
@@ -262,10 +445,10 @@ export default function ELearningDashboard() {
                   onClick={handleClick}
                   size='small'
                   sx={{
-                    bgcolor: "#1d4ed8",
+                    backgroundImage:
+                      "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))",
                     textTransform: "none",
                     borderRadius: "9999px",
-                    "&:hover": { bgcolor: "#1e40af" },
                   }}
                 >
                   View
