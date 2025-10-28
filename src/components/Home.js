@@ -30,7 +30,11 @@ const Home = () => {
             sx={{
               flexGrow: 1,
               transition: "margin 0.3s ease, width 0.3s ease",
-              width: { md: drawerOpen ? "1700px" : "1860px" },
+              width: {
+                xs: drawerOpen ? "1300px" : "1560px",
+                sm: drawerOpen ? "1500px" : "1660px",
+                md: drawerOpen ? "1700px" : "1860px",
+              },
               ml: { md: drawerOpen ? "200px" : "40px" },
             }}
           >
@@ -46,7 +50,14 @@ const Home = () => {
             >
               {/* Tabs (Location | Role | Lesson | User) */}
               <Box
-                sx={{ ml: { md: drawerOpen ? "0px" : "120px" }, mt: "-30px" }}
+                sx={{
+                  ml: {
+                    xs: drawerOpen ? "0px" : "12px",
+                    sm: drawerOpen ? "0px" : "12px",
+                    md: drawerOpen ? "0px" : "120px",
+                  },
+                  mt: "-30px",
+                }}
               >
                 <Nav />
               </Box>

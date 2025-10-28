@@ -747,6 +747,7 @@ const AddLesson = () => {
                                 value={content}
                                 onBlur={(newContent) => setContent(newContent)}
                                 config={{
+                                  justifyContent: "space-between",
                                   height: 400,
                                   toolbarAdaptive: false,
                                   toolbarSticky: false,

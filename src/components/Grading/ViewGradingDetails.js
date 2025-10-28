@@ -59,9 +59,10 @@ export default function ViewGradingDetails() {
                 p: 1,
                 borderRadius: 2,
                 "&:hover": { bgcolor: "grey.300" },
+                mt: 3,
               }}
             >
-              <ChevronLeft size={24} color='#374151' />
+              <ChevronLeft size={24} color='#374151' sx={{ mt: 10 , position:'relative' , top:'10'}} />
             </IconButton>
           </Box>
 
@@ -402,7 +403,14 @@ export default function ViewGradingDetails() {
       {/* Bottom File Indicator */}
       {!isFullscreen && (
         <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography variant='caption' color='text.secondary' mb={1} position='relative' left={30} bottom={40}>
+          <Typography
+            variant='caption'
+            color='text.secondary'
+            mb={1}
+            position='relative'
+            left={30}
+            bottom={40}
+          >
             File
           </Typography>
           <Paper
@@ -413,7 +421,6 @@ export default function ViewGradingDetails() {
               borderRadius: 2,
               p: 2,
               boxShadow: 4,
-            
             }}
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>

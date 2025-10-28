@@ -234,7 +234,10 @@ export default function ELearningDashboard() {
                 activeTab === "My"
                   ? "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))"
                   : "white",
-              color: activeTab === "My" ? "white" : "text.primary",
+              color:
+                activeTab === "My"
+                  ? "white"
+                  : "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))",
             }}
           >
             My
@@ -248,8 +251,14 @@ export default function ELearningDashboard() {
               fontWeight: 500,
               borderRadius: "0 8px 8px 0",
               borderColor: "#d1d5db",
-              bgcolor: activeTab === "Team" ? "primary.main" : "white",
-              color: activeTab === "Team" ? "white" : "text.primary",
+              backgroundImage:
+                activeTab === "Team"
+                  ? "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))"
+                  : "white",
+              color:
+                activeTab === "Team"
+                  ? "white"
+                  : "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))",
             }}
           >
             Team

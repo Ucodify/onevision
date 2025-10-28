@@ -86,7 +86,7 @@ export default function Library() {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#EDF0F2", pl: 4, pt: 5 }}>
+    <Box sx={{  pl: 4, pt: 5 }}>
       <MiniDrawer onDrawerToggle={setDrawerOpen} />
       <SearchAppBar drawerOpen={drawerOpen} />
 
@@ -95,6 +95,7 @@ export default function Library() {
           width: { md: drawerOpen ? "1600px" : "1820px" },
           ml: { md: drawerOpen ? 30 : 5 },
           my: 6,
+          mt: 5,
         }}
       >
         {/* Header Section */}
@@ -139,7 +140,7 @@ export default function Library() {
                 endIcon={<ChevronDown size={16} />}
                 onClick={handleOpenMenu}
                 sx={{
-                  bgcolor:
+                  backgroundImage:
                     "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))",
 
                   textTransform: "none",
@@ -347,7 +348,7 @@ export default function Library() {
         <Button
           variant='contained'
           sx={{
-            bgcolor:
+            backgroundImage:
               "linear-gradient(45deg, rgb(27, 63, 143), rgb(99, 91, 255))",
             textTransform: "none",
             px: 8,
